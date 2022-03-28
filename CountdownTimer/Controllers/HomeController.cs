@@ -1,4 +1,5 @@
 ﻿using CountdownTimer.Models;
+using DomainLayer.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,10 +13,12 @@ namespace CountdownTimer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IFlowObjectForHomePage flowObjectForHomePage;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFlowObjectForHomePage flowObjectForHomePage)
         {
             _logger = logger;
+            this.flowObjectForHomePage = flowObjectForHomePage;
         }
 
       
@@ -25,7 +28,8 @@ namespace CountdownTimer.Controllers
         }
         public IActionResult Timer()
         {
-            ReminderViewModel reminderViewModel = new ReminderViewModel();
+            TimerPageViewModel reminderViewModel = new TimerPageViewModel();
+            reminderViewModel = flowObjectForHomePage.Flow();
             return View(reminderViewModel);
         }
         public IActionResult Privacy()
