@@ -6,14 +6,37 @@
 <html>
 <head>
     <link rel="stylesheet" href="/css/Pages/timer.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="container">
-        <div class="div-page-Heading">CountDown Timer</div>
+        <div class="div-page-Heading"></div>
         <div class="row">
-            <button class="btn-primary"><i class="bi-alarm"></i>Add Reminder</button>
+            <button type="button" class="btn btn-labeled btn-primary col-sm-2" id="btn-add-reminder">
+                <span class="btn-label"><i class="bi bi-calendar2-plus"></i></span>Add Reminder
+            </button>
+        </div>  
+        <div class="row div-reminder-list">
+            <div class="col-sm-3 list-group">
+                <div href="#" class="list-group-item list-group-item-action active border border-3">
+                    Gayathri's Bday
+                    <button type="button" class="close btn-reminder-close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div href="#" class="list-group-item list-group-item-action list-group-item-primary border border-3">
+                    Renew Insurance
+                    <button type="button" class="close btn-reminder-close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div href="#" class="list-group-item list-group-item-action list-group-item-primary border border-3">
+                    Salary Day
+                    <button type="button" class="close btn-reminder-close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>            
         </div>
-    </div>
+        </div>
 </body>
 </html>

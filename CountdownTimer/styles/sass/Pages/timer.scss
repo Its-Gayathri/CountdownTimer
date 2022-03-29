@@ -3,6 +3,38 @@
 body {
     .Main-Body {
         background-color: $page-background-color;
-       
+    }
+
+    .container {
+        .btn-labeled {
+            padding: 0;
+
+            .btn-label {
+                position: relative;
+                display: inline-block;
+                padding: 6px 12px;
+                background: rgba(0, 0, 0, 0.15);
+                border-radius: 3px 0 0 3px;
+            }
+        }
+
+        #btn-add-reminder {
+            .btn-label {
+                left: -21px;
+            }
+        }
+
+        .btn {
+            margin-bottom: 10px;
+        }
+
+        .div-reminder-list {
+            .btn-reminder-close
+                {
+                margin-top: -2px;
+                margin-left: 10px;
+                
+            }
+        }
     }
 }
