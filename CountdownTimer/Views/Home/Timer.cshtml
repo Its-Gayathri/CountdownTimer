@@ -1,13 +1,25 @@
 ﻿@using CountdownTimer.Models;
+@using Newtonsoft.Json;
+@using System.Web.Optimization;
 @model TimerPageViewModel;
 @{
 }
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("../Scripts/countdownTimer.js")"></script>
+}
+
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="/css/Pages/timer.css" type="text/css" />
 </head>
 <body>
+    <script>
+        var reminders = @Html.Raw(Json.Serialize(@Model.Reminders));
+        var ff = @Html.Raw(Json.Serialize(@Model.Reminders));
+        var abc = "gayathri";
+    </script>
     <div class="container">
         <div class="div-page-Heading"></div>
         <div class="row">
@@ -17,29 +29,11 @@
         </div>
         <div class="row">
             <div class="div-reminder-list col-4">
-                <div class="col list-group">
-                    <div href="#" class="list-group-item list-group-item-action active border border-3">
-                        Gayathri's Bday
-                        <button type="button" class="close btn-reminder-close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div href="#" class="list-group-item list-group-item-action list-group-item-primary border border-3">
-                        Renew Insurance
-                        <button type="button" class="close btn-reminder-close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div href="#" class="list-group-item list-group-item-action list-group-item-primary border border-3">
-                        Salary Day
-                        <button type="button" class="close btn-reminder-close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                <div class="col list-group" id="list-allReminders">                    
                 </div>
             </div>
             <div class="div-timer-clock-header col-5">
-                
+
                 <div class="div-timer-clock-body">
                     <div class="clock-column">
                         <p class="clock-day clock-timer"></p>
@@ -63,6 +57,6 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 </body>
 </html>
