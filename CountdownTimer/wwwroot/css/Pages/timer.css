@@ -17,6 +17,7 @@ body .container .btn {
   margin-bottom: 10px; }
 
 body .container .div-reminder-list .list-group-item {
+  cursor: pointer;
   margin-bottom: 1px;
   height: 69px; }
   body .container .div-reminder-list .list-group-item .btn-reminder-close {
