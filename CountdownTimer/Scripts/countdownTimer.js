@@ -79,4 +79,8 @@ $(document).ready(function () {
 		startTimer = '';
 		calcTime(currentDate);
 	});
+
+	$('.btn-reminder-close').click(function () {
+		$(this).parent().remove();
+	});
 });
