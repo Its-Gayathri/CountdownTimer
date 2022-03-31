@@ -50,16 +50,15 @@ function calcTime(dates) {
 
 }
 
-
 function getAllReminders(reminders) {
 	if (reminders != undefined && reminders != null) {
 		$.each(reminders, function (index, item) {
 			if (index == 0) {
-				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action active border border-3'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY')+" <button type = 'button' class='close btn-reminder-close' aria - label='Close' > <span aria-hidden='true'>&times;</span> </button > </div > ";
+				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action active border border-3' data-reminderDate = '" + item.reminderDate + "'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "<button type='button' class='close btn-reminder-close' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
 				$('#list-allReminders').append(reminderdiv);
 			}
 			else {
-				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action border border-3'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "<button type='button' class='close btn-reminder-close' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
+				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action border border-3' data-reminderDate = '" + item.reminderDate +"'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "<button type='button' class='close btn-reminder-close' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
 				$('#list-allReminders').append(reminderdiv);
 			}
 		});
@@ -68,4 +67,11 @@ function getAllReminders(reminders) {
 		var reminderdiv = "<div href='#' class='list-group-item list-group-item-action active border border-3'>No Reminders Available!!<button type='button' class='close btn-reminder-close' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
 		$('#list-allReminders').append(reminderdiv);
     }
-	};
+};
+
+$(document).ready(function () {
+	$(".list-group-item-action").click(function () {
+		
+		//alert("The paragraph was clicked.");
+	});
+});
