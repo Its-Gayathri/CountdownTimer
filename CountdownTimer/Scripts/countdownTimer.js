@@ -86,4 +86,8 @@ $(document).ready(function () {
 	$('#sidebarCollapse').on('click', function () {
 		$('#sidebar').toggleClass('active');
 	});
+
+	//$('#btn-add-reminder').click(function () {
+	//	$('#modal-addReminder').modal('show')
+	//});
 });
