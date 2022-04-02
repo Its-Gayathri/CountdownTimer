@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace CountdownTimer.Models
+#nullable disable
+
+namespace CountdownTimer.Entities
 {
-    public class ReminderViewModel
+    public partial class Reminder
     {
         public int Id { get; set; }
         public string ReminderName { get; set; }

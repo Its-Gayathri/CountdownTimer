@@ -1,12 +1,8 @@
 ﻿using CountdownTimer.Models;
-using DomainLayer.Interfaces;
+using CountdownTimer.ServiceProviders.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CountdownTimer.Controllers
 {
