@@ -140,7 +140,6 @@ a, a:hover, a:focus {
     }
 
     #sidebar ul.components {
-        padding: 20px 0;
         border-bottom: 1px solid #47748b;
     }
 
@@ -169,4 +168,21 @@ ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+}
+
+.bi-card-list:before
+{
+    font-size: 24px;
+}
+#sidebarCollapse {
+    height: 35px;
+    background-color: #1fc69d;
+}
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
