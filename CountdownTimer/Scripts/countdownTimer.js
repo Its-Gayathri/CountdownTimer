@@ -73,7 +73,6 @@ $(document).ready(function () {
 	$(".list-group-item.list-group-item-action").click(function () {
 		$('.list-group-item.list-group-item-action.active').removeClass('active');
 		$(this).addClass('active');
-		console.log(moment($(this).data("reminderdate")).format('DD/MM/YYYY'));
 		var currentDate = $(this).data("reminderdate");
 		now = new Date(),
 		startTimer = '';

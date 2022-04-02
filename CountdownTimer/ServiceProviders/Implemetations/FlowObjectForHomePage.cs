@@ -2,7 +2,6 @@
 using CountdownTimer.Entities;
 using CountdownTimer.Models;
 using CountdownTimer.ServiceProviders.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace CountdownTimer.ServiceProviders.Implemetations
@@ -17,21 +16,8 @@ namespace CountdownTimer.ServiceProviders.Implemetations
         }
         public TimerPageViewModel Flow()
         {
-            List<ReminderViewModel> reminderViewModel = new List<ReminderViewModel>()
-            {
-                //new ReminderViewModel
-                //{
-                //    Id = 1,
-                //    ReminderName = "Gayathri's B'day",
-                //    ReminderDate = new DateTime(2022,07,12)
-                //},
-                //new ReminderViewModel
-                //{
-                //    Id = 1,
-                //    ReminderName = "Divya's B'day",
-                //    ReminderDate = new DateTime(2022,11,10)
-                //},
-            };
+            List<ReminderViewModel> reminderViewModel = new List<ReminderViewModel>();
+            
             TimerPageViewModel timerPageViewModel = new TimerPageViewModel();
             List<Reminder> reminders = remindersRepo.GetAllReminders();
             foreach (var item in reminders)
