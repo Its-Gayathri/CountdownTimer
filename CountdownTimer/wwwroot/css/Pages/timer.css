@@ -1,6 +1,9 @@
 ﻿body .Main-Body {
   background-color: grey; }
 
+body .container .div-Contentstarting {
+  margin-left: 0; }
+
 body .container .btn-labeled {
   padding: 0; }
   body .container .btn-labeled .btn-label {
@@ -10,8 +13,10 @@ body .container .btn-labeled {
     background: rgba(0, 0, 0, 0.15);
     border-radius: 3px 0 0 3px; }
 
-body .container #btn-add-reminder .btn-label {
-  left: -21px; }
+body .container #btn-add-reminder {
+  max-width: 28.333333%; }
+  body .container #btn-add-reminder .btn-label {
+    left: -50px; }
 
 body .container .btn {
   margin-bottom: 10px; }
@@ -32,6 +37,7 @@ body .container .div-timer-clock-header {
   font-size: 1.4rem;
   font-weight: inherit;
   background-color: #1fc69d;
+  max-width: 100%;
   /*  height: 100vh;*/
   width: 100vw; }
   body .container .div-timer-clock-header .clock-input {
