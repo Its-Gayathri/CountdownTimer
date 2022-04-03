@@ -86,8 +86,16 @@ $(document).ready(function () {
 	$('#sidebarCollapse').on('click', function () {
 		$('#sidebar').toggleClass('active');
 	});
-
-	//$('#btn-add-reminder').click(function () {
-	//	$('#modal-addReminder').modal('show')
-	//});
+	
+	$('#modal-addReminder').on('shown.bs.modal', function () {
+		$('.fetched-date input').datepicker({
+			format: "dd/mm/yyyy",
+			startDate: "01-01-2015",
+			//endDate: "01-01-2020",
+			todayHighlight: true,
+			todayBtn: "linked",
+			autoclose: true,
+			//calendarWeeks: true,
+		});
+	});
 });
