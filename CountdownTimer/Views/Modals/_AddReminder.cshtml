@@ -14,34 +14,33 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
-                    <div class="mb-3 col-8">
+                <form class="col-12">
+                    <div class="mb-3">
                         <label for="id-reminderName" class="form-label">Reminder Name</label>
                         <input type="text" class="form-control" id="id-reminderName">
                     </div>
-                    <div class="fetched-date mb-3 col-8">
+                    <div class="fetched-date mb-3">
                         <label for="id-reminderDate" class="form-label">Reminder Date</label>
                         <input type="text" class="form-control" value="07/07/2017" id="id-reminderDate">
-                        <i class="bi bi-calendar3"></i>
+                        <i class="bi bi-calendar3 icon-inside-input"></i>
                     </div>
-
-                        <div class="dropdown mb-3 col-8">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownReminderType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Reminder Type
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownReminderType">
-                                <a class="dropdown-item" href="#">Anniversary</a>
-                                <a class="dropdown-item" href="#">B'day</a>
-                                <a class="dropdown-item" href="#">Bill Due Date</a>
-                                <a class="dropdown-item" href="#">Festival</a>
-                                <a class="dropdown-item" href="#">Holiday</a>
-                                <a class="dropdown-item" href="#">Last Day</a>
-                                <a class="dropdown-item" href="#">Other</a>
-                            </div>
-                        </div>
+                    <div class="mb-3">
+                        <label for="id-reminderName" class="form-label">Reminder Type</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">Anniversary</option>
+                            <option value="2">B'day</option>
+                            <option value="3">Bill Due Date</option>
+                            <option value="3">Festival</option>
+                            <option value="3">Holiday</option>
+                            <option value="3">Last Day</option>
+                            <option value="3">Other</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    </div>
+                </form>               
             </div>           
         </div>
     </div>

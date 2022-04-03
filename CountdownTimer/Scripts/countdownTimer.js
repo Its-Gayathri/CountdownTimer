@@ -89,6 +89,13 @@ $(document).ready(function () {
 	
 	$('#modal-addReminder').on('shown.bs.modal', function () {
 		$('.fetched-date input').datepicker({
+			//beforeShow: function (input, inst) {
+			//	inst.dpDiv.css({
+			//		marginTop: -input.offsetHeight + 'px',
+			//		marginLeft: input.offsetWidth + 'px'
+			//	});
+			//},
+			orientation: "top",
 			format: "dd/mm/yyyy",
 			startDate: "01-01-2015",
 			//endDate: "01-01-2020",

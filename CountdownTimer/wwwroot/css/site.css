@@ -229,3 +229,8 @@ ul ul a {
     width: 1098px;
     margin-left: -85px;
 }
+.icon-inside-input {
+    top: -30px;
+    position: relative;
+    margin-left: 309px;
+}
