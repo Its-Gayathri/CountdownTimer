@@ -1,0 +1,9 @@
+﻿@import "../abstract/_variables.scss";
+
+@mixin basic_modal_styles {
+    &.modal {
+        .modal-title {
+            color: #20c997;
+        }
+    }
+}

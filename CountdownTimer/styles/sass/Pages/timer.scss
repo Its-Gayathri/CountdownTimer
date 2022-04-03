@@ -24,6 +24,7 @@ body {
 
         #btn-add-reminder {
             max-width: 29.333333%;
+            background-color: $main-theme-color-purple;
 
             .btn-label {
                 left: -83px;
@@ -35,10 +36,18 @@ body {
         }
 
         .div-reminder-list {
+            .list-group-item.active {
+                background-color: $main-theme-color-purple-lighter !important;
+            }
+
             .list-group-item {
                 .btn-reminder-close {
                     margin-top: -17px;
                     margin-left: 10px;
+                }
+
+                .active {
+                    background-color: $main-theme-color-purple-lighter !important;
                 }
 
                 cursor: pointer;
@@ -142,8 +151,6 @@ body {
             }
         }
     }
-
-
     /*Modal styles*/
     .modal {
         .modal-content {
