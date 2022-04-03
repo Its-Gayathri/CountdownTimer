@@ -125,4 +125,29 @@ $(document).ready(function () {
 				}, false)
 			})
 	})()
+
+	$('#save-btn-AddReminder').click(function () {	
+		$('#modal-addReminder').modal('hide');
+		var reminderName = $('#id-reminderName').val();
+		var reminderDate = $('#id-reminderDate').val();
+		var reminderType = $('#id-reminderType').val();
+		var data =
+		{
+			ReminderName: reminderName,
+			ReminderDate: reminderDate,
+			ReminderType: reminderType
+		}
+		sendDataToBackEnd(data, "/Home/AddReminder")
+	});
 });
+
+function sendDataToBackEnd(data, uri) {
+	$.ajax({
+		type: "POST",
+		url: uri,
+		data: data,
+		success: function () {
+			alert('You added a new Reminder');
+		}
+	});
+}	

@@ -14,7 +14,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="col-12 needs-validation" novalidate>
+                <div class="col-12 needs-validation" novalidate id="form-addReminder">
                     <div class="mb-3">
                         <label for="id-reminderName" class="form-label">Reminder Name</label>
                         <input type="text" class="form-control" id="id-reminderName" required>
@@ -24,7 +24,7 @@
                     </div>
                     <div class="fetched-date mb-3">
                         <label for="id-reminderDate" class="form-label">Reminder Date</label>
-                        <input type="text" class="form-control" value="07/07/2017" id="id-reminderDate" required>
+                        <input type="datetime" class="form-control" value="04/01/2022" id="id-reminderDate" required >
                         <i class="bi bi-calendar3 icon-inside-input"></i>
                         <div class="invalid-feedback">
                             Please choose a date.
@@ -32,24 +32,24 @@
                     </div>
                     <div class="mb-3">
                         <label for="id-reminderName" class="form-label">Reminder Type</label>
-                        <select class="form-select" aria-label="Default select example" required>
-                            <option value="1">Anniversary</option>
-                            <option value="2">B'day</option>
-                            <option value="3">Bill Due Date</option>
-                            <option value="3">Festival</option>
-                            <option value="3">Holiday</option>
-                            <option value="3">Last Day</option>
-                            <option value="3">Other</option>
+                        <select class="form-select" aria-label="Default select example" required id="id-reminderType">
+                            <option value="anniversary">Anniversary</option>
+                            <option value="birthday">B'day</option>
+                            <option value="billduedate">Bill Due Date</option>
+                            <option value="festival">Festival</option>
+                            <option value="holiday">Holiday</option>
+                            <option value="lastday">Last Day</option>
+                            <option value="other">Other</option>
                         </select>
                         <div class="invalid-feedback">
                             Please select a Type.
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-modal-save">Save</button>
+                        <button type="submit" class="btn btn-modal-save" id="save-btn-AddReminder">Save</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
-                </form>               
+                </div>               
             </div>           
         </div>
     </div>

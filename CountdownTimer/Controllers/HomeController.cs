@@ -28,6 +28,11 @@ namespace CountdownTimer.Controllers
             reminderViewModel = flowObjectForHomePage.Flow();
             return View(reminderViewModel);
         }
+        [HttpPost]
+        public void AddReminder(ReminderViewModel reminderViewModel)
+        {
+
+        }
         public IActionResult Privacy()
         {
             return View();
