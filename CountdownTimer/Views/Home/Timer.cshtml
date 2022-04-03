@@ -1,11 +1,63 @@
 ﻿@using CountdownTimer.Models;
+@using Newtonsoft.Json;
+@using System.Web.Optimization;
 @model TimerPageViewModel;
 @{
 }
-<div class="Main-Body">
-    <h1>CountDown Timer</h1>
-    <div class="">
-        <button type="button" class="btn btn-primary">Primary</button>
+@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("../Scripts/countdownTimer.js")"></script>
+}
 
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/Pages/timer.css" type="text/css" />
+</head>
+<body>
+    <script>
+        var reminders = @Html.Raw(Json.Serialize(@Model.Reminders));
+    </script>
+    <div class="container">
+        <div class="div-page-Heading"></div>
+        <div class="row div-Contentstarting">
+            <button type="button" class="btn btn-labeled btn-primary col-sm-4" id="btn-add-reminder" data-toggle="modal" data-target="#modal-addReminder">
+                <span class="btn-label"><i class="bi bi-calendar2-plus"></i></span>Add Reminder
+            </button>
+        </div>
+        <div class="row">
+            <div class="div-reminder-list col-4">
+                <div class="col list-group" id="list-allReminders">
+                </div>
+            </div>
+            <div class="div-timer-clock-header col-5">
+
+                <div class="div-timer-clock-body">
+                    <div class="clock-column">
+                        <p class="clock-day clock-timer"></p>
+                        <p class="clock-label">Days</p>
+                    </div>
+
+                    <div class="clock-column">
+                        <p class="clock-hours clock-timer"></p>
+                        <p class="clock-label">Hours</p>
+                    </div>
+
+                    <div class="clock-column">
+                        <p class="clock-minutes clock-timer"></p>
+                        <p class="clock-label">Minutes</p>
+                    </div>
+
+                    <div class="clock-column">
+                        <p class="clock-seconds clock-timer"></p>
+                        <p class="clock-label">Seconds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+    @Html.Partial("../Modals/_AddReminder")
+</body>
+</html>
+
+

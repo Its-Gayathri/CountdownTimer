@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/Pages/timer.css",
+    "inputFile": "styles/sass/Pages/timer.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Pages/myModals.css",
+    "inputFile": "styles/sass/Pages/myModals.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Pages/_variables.css",
+    "inputFile": "styles/sass/Pages/_variables.scss"
+  }
+]

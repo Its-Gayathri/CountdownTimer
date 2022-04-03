@@ -1,6 +1,6 @@
 ﻿using CountdownTimer.Models;
 
-namespace DomainLayer.Interfaces
+namespace CountdownTimer.ServiceProviders.Interfaces
 {
     public interface IFlowObjectForHomePage
     {

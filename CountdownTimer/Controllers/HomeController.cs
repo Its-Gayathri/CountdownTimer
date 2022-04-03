@@ -1,12 +1,8 @@
 ﻿using CountdownTimer.Models;
-using DomainLayer.Interfaces;
+using CountdownTimer.ServiceProviders.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CountdownTimer.Controllers
 {
@@ -31,6 +27,11 @@ namespace CountdownTimer.Controllers
             TimerPageViewModel reminderViewModel = new TimerPageViewModel();
             reminderViewModel = flowObjectForHomePage.Flow();
             return View(reminderViewModel);
+        }
+        [HttpPost]
+        public void AddReminder(ReminderViewModel reminderViewModel)
+        {
+
         }
         public IActionResult Privacy()
         {

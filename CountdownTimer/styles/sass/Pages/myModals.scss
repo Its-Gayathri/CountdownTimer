@@ -1,0 +1,31 @@
+﻿@import "../Pages/_variables.scss";
+
+@mixin basic_modal_styles {
+    & .modal {
+        .modal-content {
+            background-color: $background-dual-pink-color;
+
+            .modal-header {
+                background-color: $main-theme-color-purple;
+
+                .modal-title {
+                    color: white;
+                    text-align: center;
+                    margin-left: 96px;
+                    font-weight: bold;
+                    word-spacing: 7px;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .modal-body {
+                .modal-footer {
+                    .btn-modal-save {
+                        background-color: $main-theme-color-purple;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+} 
