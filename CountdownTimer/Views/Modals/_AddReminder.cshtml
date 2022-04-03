@@ -14,19 +14,25 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="col-12">
+                <form class="col-12 needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="id-reminderName" class="form-label">Reminder Name</label>
-                        <input type="text" class="form-control" id="id-reminderName">
+                        <input type="text" class="form-control" id="id-reminderName" required>
+                        <div class="invalid-feedback">
+                            Please enter a Reminder Name.
+                        </div>
                     </div>
                     <div class="fetched-date mb-3">
                         <label for="id-reminderDate" class="form-label">Reminder Date</label>
-                        <input type="text" class="form-control" value="07/07/2017" id="id-reminderDate">
+                        <input type="text" class="form-control" value="07/07/2017" id="id-reminderDate" required>
                         <i class="bi bi-calendar3 icon-inside-input"></i>
+                        <div class="invalid-feedback">
+                            Please choose a date.
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="id-reminderName" class="form-label">Reminder Type</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" required>
                             <option value="1">Anniversary</option>
                             <option value="2">B'day</option>
                             <option value="3">Bill Due Date</option>
@@ -35,9 +41,12 @@
                             <option value="3">Last Day</option>
                             <option value="3">Other</option>
                         </select>
+                        <div class="invalid-feedback">
+                            Please select a Type.
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>               

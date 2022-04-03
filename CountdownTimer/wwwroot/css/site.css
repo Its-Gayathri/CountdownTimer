@@ -229,8 +229,13 @@ ul ul a {
     width: 1098px;
     margin-left: -85px;
 }
+
+/*Modal styles*/
 .icon-inside-input {
     top: -30px;
     position: relative;
     margin-left: 309px;
+}
+.form-control.is-valid, .was-validated .form-control:valid, .was-validated .form-select:valid:not([multiple]):not([size]) /*to remove green right mark*/ {
+    background-image: none;
 }
