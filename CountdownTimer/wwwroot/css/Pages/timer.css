@@ -1,7 +1,5 @@
 ﻿body {
   /*Modal styles*/ }
-  body .Main-Body {
-    background-color: grey; }
   body .container .div-Contentstarting {
     margin-left: 0; }
   body .container .btn-labeled {
@@ -103,3 +101,17 @@
           display: none; }
   body .modal .modal-content {
     width: 80%; }
+  body .modal .modal-content {
+    background-color: #dfcfe7; }
+    body .modal .modal-content .modal-header {
+      background-color: #7652c3; }
+      body .modal .modal-content .modal-header .modal-title {
+        color: white;
+        text-align: center;
+        margin-left: 96px;
+        font-weight: bold;
+        word-spacing: 7px;
+        letter-spacing: 1px; }
+    body .modal .modal-content .modal-body .modal-footer .btn-modal-save {
+      background-color: #7652c3;
+      color: white; }

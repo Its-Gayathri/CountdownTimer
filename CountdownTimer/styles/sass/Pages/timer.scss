@@ -1,10 +1,7 @@
-﻿@import "../abstract/_variables.scss";
+﻿@import "../Pages/_variables.scss";
+@import "../Pages/myModals.scss";
 
 body {
-    .Main-Body {
-        background-color: $page-background-color;
-    }
-
     .container {
         .div-Contentstarting {
             margin-left: 0;
@@ -157,4 +154,6 @@ body {
             width: 80%;
         }
     }
+
+    @include basic_modal_styles;
 }
