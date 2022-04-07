@@ -79,7 +79,7 @@ $(document).ready(function () {
 		calcTime(currentDate);
 	});
 
-	$('.btn-reminder-close').click(function () {
+	$('.btn-reminder-close').click(function () {		
 		var reminderId = $(this).closest('.list-group-item.list-group-item-action').data("reminderid");
 		$.ajax({
 			type: "POST",
@@ -88,12 +88,9 @@ $(document).ready(function () {
 				reminderId: reminderId
 			},
 			success: function (data) {
+				$(this).parent().remove();
 			}
 		});
-	});
-
-	$('.btn-reminder-close').click(function () {
-		$(this).parent().remove();
 	});
 
 	$('#sidebarCollapse').on('click', function () {
@@ -160,6 +157,7 @@ function sendDataToBackEnd(data, uri) {
 		type: "POST",
 		url: uri,
 		data: data,
+		async: false,
 		success: function (data) {			
 		}
 	});
