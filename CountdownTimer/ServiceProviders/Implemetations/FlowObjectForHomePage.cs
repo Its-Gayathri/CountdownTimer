@@ -17,7 +17,7 @@ namespace CountdownTimer.ServiceProviders.Implemetations
         }
         public TimerPageViewModel Flow()
         {
-            bool useDb = false;
+            bool useDb = true;
             List<ReminderViewModel> reminderViewModel = new List<ReminderViewModel>();
             TimerPageViewModel timerPageViewModel = new TimerPageViewModel();
             if (useDb)

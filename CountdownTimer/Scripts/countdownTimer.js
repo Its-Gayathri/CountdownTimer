@@ -58,7 +58,7 @@ function getAllReminders(reminders) {
 				$('#list-allReminders').append(reminderdiv);
 			}
 			else {
-				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action border border-3' data-reminderDate = '" + item.reminderDate +"'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "<button type='button' class='close btn-reminder-close' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
+				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action border border-3' data-reminderDate = '" + item.reminderDate +"'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "</div>";
 				$('#list-allReminders').append(reminderdiv);
 			}
 		});
@@ -146,7 +146,8 @@ function sendDataToBackEnd(data, uri) {
 		type: "POST",
 		url: uri,
 		data: data,
-		success: function () {
+		success: function (data) {
+			console.log(data);
 			alert('You added a new Reminder');
 		}
 	});

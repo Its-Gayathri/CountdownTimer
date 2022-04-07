@@ -1,3 +1,4 @@
+using AutoMapper;
 using CountdownTimer.DataAccessLayer.Implemetation;
 using CountdownTimer.DataAccessLayer.Interface;
 using CountdownTimer.Entities;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.IO;
 
 namespace CountdownTimer
@@ -30,9 +32,13 @@ namespace CountdownTimer
             services.AddControllersWithViews();
             services.AddScoped<IFlowObjectForHomePage, FlowObjectForHomePage>();
             services.AddScoped<IRemindersRepo, RemindersRepo>();
+            services.AddScoped<IFlowObjectForAddingReminder, FlowObjectForAddingReminder>();
 
             services.AddDbContext<PluralsightProjectsDBContext>(
                 options => options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=PluralsightProjectsDB;Integrated Security = True"));
+
+            //AutoMapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

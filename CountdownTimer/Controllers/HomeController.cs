@@ -10,11 +10,13 @@ namespace CountdownTimer.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IFlowObjectForHomePage flowObjectForHomePage;
+        private readonly IFlowObjectForAddingReminder flowObjectForAddingReminder;
 
-        public HomeController(ILogger<HomeController> logger, IFlowObjectForHomePage flowObjectForHomePage)
+        public HomeController(ILogger<HomeController> logger, IFlowObjectForHomePage flowObjectForHomePage, IFlowObjectForAddingReminder flowObjectForAddingReminder)
         {
             _logger = logger;
             this.flowObjectForHomePage = flowObjectForHomePage;
+            this.flowObjectForAddingReminder = flowObjectForAddingReminder;
         }
 
       
@@ -29,9 +31,10 @@ namespace CountdownTimer.Controllers
             return View(reminderViewModel);
         }
         [HttpPost]
-        public void AddReminder(ReminderViewModel reminderViewModel)
+        public bool AddReminder(ReminderViewModel reminderViewModel)
         {
-
+            bool reminderAdded = flowObjectForAddingReminder.Flow(reminderViewModel);
+            return reminderAdded;
         }
         public IActionResult Privacy()
         {

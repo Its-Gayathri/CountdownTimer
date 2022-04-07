@@ -6,5 +6,6 @@ namespace CountdownTimer.DataAccessLayer.Implemetation
     public interface IRemindersRepo
     {
         List<Reminder> GetAllReminders();
+        bool AddReminder(Reminder reminder);
     }
 }

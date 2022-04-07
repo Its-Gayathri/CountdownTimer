@@ -14,6 +14,12 @@ namespace CountdownTimer.DataAccessLayer.Interface
             this.context = context;
         }
 
+        public bool AddReminder(Reminder reminder)
+        {
+            context.Add(reminder);
+            return context.SaveChanges() > 0;
+        }
+
         public List<Reminder> GetAllReminders()
         {
             List<Reminder> reminders = new List<Reminder>();
