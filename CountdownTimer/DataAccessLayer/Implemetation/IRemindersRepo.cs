@@ -7,5 +7,6 @@ namespace CountdownTimer.DataAccessLayer.Implemetation
     {
         List<Reminder> GetAllReminders();
         bool AddReminder(Reminder reminder);
+        bool DeleteReminder(int reminderId);
     }
 }

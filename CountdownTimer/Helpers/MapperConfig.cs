@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CountdownTimer.Entities;
 using CountdownTimer.Models;
+using System.Collections.Generic;
 
 namespace CountdownTimer.Helpers
 {
@@ -10,6 +11,8 @@ namespace CountdownTimer.Helpers
         {
             //source, destination
             CreateMap<ReminderViewModel, Reminder>();
+            CreateMap<Reminder, ReminderViewModel> ();
+
         }
     }
 }

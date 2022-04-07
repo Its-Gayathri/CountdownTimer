@@ -33,6 +33,7 @@ namespace CountdownTimer
             services.AddScoped<IFlowObjectForHomePage, FlowObjectForHomePage>();
             services.AddScoped<IRemindersRepo, RemindersRepo>();
             services.AddScoped<IFlowObjectForAddingReminder, FlowObjectForAddingReminder>();
+            services.AddScoped<IFlowObjectForDeletingReminder, FlowObjectForDeletingReminder>();
 
             services.AddDbContext<PluralsightProjectsDBContext>(
                 options => options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=PluralsightProjectsDB;Integrated Security = True"));

@@ -58,7 +58,7 @@ function getAllReminders(reminders) {
 				$('#list-allReminders').append(reminderdiv);
 			}
 			else {
-				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action border border-3' data-reminderDate = '" + item.reminderDate +"'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "</div>";
+				var reminderdiv = "<div href='#' class='list-group-item list-group-item-action border border-3' data-reminderDate = '" + item.reminderDate + "'  data-reminderId = '" + item.id + "'>" + item.reminderName + "<br>" + moment(item.reminderDate).format('DD/MM/YYYY') + "<button type='button' class='close btn-reminder-close' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div>";
 				$('#list-allReminders').append(reminderdiv);
 			}
 		});
@@ -77,6 +77,19 @@ $(document).ready(function () {
 		now = new Date(),
 		startTimer = '';
 		calcTime(currentDate);
+	});
+
+	$('.btn-reminder-close').click(function () {
+		var reminderId = $(this).closest('.list-group-item.list-group-item-action').data("reminderid");
+		$.ajax({
+			type: "POST",
+			url: "/Home/DeleteReminder",
+			data: {
+				reminderId: reminderId
+			},
+			success: function (data) {
+			}
+		});
 	});
 
 	$('.btn-reminder-close').click(function () {
@@ -137,7 +150,8 @@ $(document).ready(function () {
 			ReminderDate: reminderDate,
 			ReminderType: reminderType
 		}
-		sendDataToBackEnd(data, "/Home/AddReminder")
+		sendDataToBackEnd(data, "/Home/AddReminder");
+		alert('You added a new Reminder');
 	});
 });
 
@@ -146,9 +160,7 @@ function sendDataToBackEnd(data, uri) {
 		type: "POST",
 		url: uri,
 		data: data,
-		success: function (data) {
-			console.log(data);
-			alert('You added a new Reminder');
+		success: function (data) {			
 		}
 	});
 }	
