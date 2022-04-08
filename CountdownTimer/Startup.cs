@@ -67,8 +67,9 @@ namespace CountdownTimer
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Timer}/{id?}");
-            });
+                    //pattern: "{controller=Home}/{action=Timer}/{id?}");
+                    pattern: "{controller=ContactUs}/{action=Index}/{id?}");
+        });
             app.UseStaticFiles(new StaticFileOptions()
             {
                 // Where the files are physicly located

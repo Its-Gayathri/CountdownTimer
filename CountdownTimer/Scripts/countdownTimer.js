@@ -94,9 +94,7 @@ $(document).ready(function () {
 		});
 	});
 
-	$('#sidebarCollapse').on('click', function () {
-		$('#sidebar').toggleClass('active');
-	});
+	
 	
 	$('#modal-addReminder').on('shown.bs.modal', function () {
 		$('.fetched-date input').datepicker({
