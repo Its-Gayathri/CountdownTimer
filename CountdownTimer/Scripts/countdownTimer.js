@@ -81,6 +81,7 @@ $(document).ready(function () {
 
 	$('.btn-reminder-close').click(function () {		
 		var reminderId = $(this).closest('.list-group-item.list-group-item-action').data("reminderid");
+		$(this).parent().remove();
 		$.ajax({
 			type: "POST",
 			url: "/Home/DeleteReminder",
@@ -88,7 +89,7 @@ $(document).ready(function () {
 				reminderId: reminderId
 			},
 			success: function (data) {
-				$(this).parent().remove();
+				
 			}
 		});
 	});
@@ -148,7 +149,7 @@ $(document).ready(function () {
 			ReminderType: reminderType
 		}
 		sendDataToBackEnd(data, "/Home/AddReminder");
-		alert('You added a new Reminder');
+		location.reload();
 	});
 });
 
